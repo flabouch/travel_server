@@ -1,0 +1,69 @@
+# enter your gemset below
+rvm ruby-1.9.2@travel_server
+
+# no need to edit below here
+alias rails="bundle exec rails"
+alias specjour="bundle exec specjour"
+alias rspec="bundle exec rspec"
+alias rake="bundle exec rake"
+
+_VIM=$(which vim)
+_GVIM=$(which vim)
+_SED=$(which sed)
+_GREP=$(which grep)
+_APPDIR=`dirname $rvm_current_rvmrc`
+
+# usage: v some/path/returned/from/cucumber:25
+function v() {
+  param=`echo "$@" | $_SED 's/:\([0-9]*\)$/ +\1/'`
+  $_VIM $param
+}
+
+# provide a path or PT id
+function cucumber() {
+  cd $_APPDIR
+  if [ -f "$@" ];
+  then
+    bundle exec cucumber --require features -f pretty "$@"
+  else
+    line=$(echo "$@" | $_SED -e '/.*:\([0-9]\+\)/!d;s//\1/')
+    param=$(echo "$@" | $_SED 's/:.*//')
+    if [ $(echo $param | grep -oE ^[0-9]\+$) ];
+    then
+      param=$(locate_pt "$param")
+    fi
+    if [ -z $line ];
+    then
+      bundle exec cucumber --require features -f pretty "$param"
+    else
+      bundle exec cucumber --require features -f pretty "$param:$line"
+    fi
+  fi
+  cd -
+}
+
+# return the absolute path for a pivotal tracker id
+function locate_pt() {
+  echo $($_GREP -ril "$@" ${_APPDIR}/features/*)
+}
+
+# usage: gvpt pivotal_tracker_id
+# example: gvpt 123456
+function gvpt(){
+  param=$(locate_pt "$@")
+  $_GVIM --remote-tab-silent "$param"
+}
+
+# usage: vimpt pivotal_tracker_id
+# example: vimpt 123456
+function vimpt(){
+  param=$(locate_pt "$@")
+  $_VIM "$param"
+}
+
+function cdapp(){
+  cd $_APPDIR
+}
+
+rvm info binaries
+

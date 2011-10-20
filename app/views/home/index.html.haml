@@ -1,0 +1,5 @@
+%h1 Home#index
+- @users.each do |user|
+  %p== User: #{link_to user.email, user}
+%p Find me in app/views/home/index.html.haml
+
