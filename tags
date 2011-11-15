@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddModeUniquenessIndex	db/migrate/20111031132858_add_mode_uniqueness_index.rb	/^class AddModeUniquenessIndex < ActiveRecord::Migration$/;"	c
+AddNameToUsers	db/migrate/20111027155350_add_name_to_users.rb	/^class AddNameToUsers < ActiveRecord::Migration$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:TravelServer
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateDestinations	db/migrate/20111103212217_create_destinations.rb	/^class CreateDestinations < ActiveRecord::Migration$/;"	c
+CreateTransportations	db/migrate/20111031122349_create_transportations.rb	/^class CreateTransportations < ActiveRecord::Migration$/;"	c
+CreateTrips	db/migrate/20111101145824_create_trips.rb	/^class CreateTrips < ActiveRecord::Migration$/;"	c
+Destination	app/models/destination.rb	/^class Destination < ActiveRecord::Base$/;"	c
+DeviseCreateUsers	db/migrate/20111020152037_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+HomeHelper	app/helpers/home_helper.rb	/^module HomeHelper$/;"	m
+Transportation	app/models/transportation.rb	/^class Transportation < ActiveRecord::Base$/;"	c
+TransportationsController	app/controllers/transportations_controller.rb	/^class TransportationsController < ApplicationController$/;"	c
+TransportationsHelper	app/helpers/transportations_helper.rb	/^module TransportationsHelper$/;"	m
+TravelServer	config/application.rb	/^module TravelServer$/;"	m
+Trip	app/models/trip.rb	/^class Trip < ActiveRecord::Base$/;"	c
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+change	db/migrate/20111027155350_add_name_to_users.rb	/^  def change$/;"	f	class:AddNameToUsers
+change	db/migrate/20111031122349_create_transportations.rb	/^  def change$/;"	f	class:CreateTransportations
+change	db/migrate/20111101145824_create_trips.rb	/^  def change$/;"	f	class:CreateTrips
+change	db/migrate/20111103212217_create_destinations.rb	/^  def change$/;"	f	class:CreateDestinations
+down	db/migrate/20111020152037_devise_create_users.rb	/^  def self.down$/;"	F	class:DeviseCreateUsers
+down	db/migrate/20111031132858_add_mode_uniqueness_index.rb	/^  def down$/;"	f	class:AddModeUniquenessIndex
+index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
+index	app/controllers/transportations_controller.rb	/^  def index$/;"	f	class:TransportationsController
+mode_downcase	app/models/transportation.rb	/^  def mode_downcase$/;"	f	class:Transportation
+show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+up	db/migrate/20111020152037_devise_create_users.rb	/^  def self.up$/;"	F	class:DeviseCreateUsers
+up	db/migrate/20111031132858_add_mode_uniqueness_index.rb	/^  def up$/;"	f	class:AddModeUniquenessIndex
