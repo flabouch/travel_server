@@ -12,6 +12,7 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
 	watch(%r{^spec/support/.+\.rb$})
 end
 
+#guard 'rspec', :version => 2, :cli => "--color --format nested --fail-fast --drb" do
 guard 'rspec', :version => 2, :cli => "--drb" do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
