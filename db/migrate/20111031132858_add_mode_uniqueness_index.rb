@@ -1,6 +1,6 @@
 class AddModeUniquenessIndex < ActiveRecord::Migration
   def up
-    add_index :transportation :mode, :unique => true
+    add_index :transportations, :mode, :unique => true
   end
 
   def down
