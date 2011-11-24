@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121215631) do
+ActiveRecord::Schema.define(:version => 20111124171338) do
 
   create_table "destinations", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(:version => 20111121215631) do
     t.datetime "updated_at"
     t.integer  "transportation_arrival_id"
     t.integer  "transportation_departure_id"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "transportations", :force => true do |t|
