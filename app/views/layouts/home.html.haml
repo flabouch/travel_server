@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %title My App
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+    = csrf_meta_tags
+  %body.body-noise
+    -#%header
+      -#= render "layouts/header"
+    %nav.container
+      %ul
+        = render "shared/connected"
+    - flash.each do |name, msg|
+      - if msg.class == Array 
+        - msg.each do |message| 
+          = content_tag :div, message, :id => "flash_#{name}"
+      - else
+        = content_tag :div, msg, :id => "flash_#{name}" 
+    .container
+      = yield

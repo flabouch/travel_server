@@ -10,7 +10,7 @@ end
 
 
 gem 'haml-rails', '>= 0.3.4', :group => [:development, :test]
-
+gem 'simple_form'
 gem 'jquery-rails'
 gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]
 gem "cucumber-rails", ">= 1.1.1", :group => :test

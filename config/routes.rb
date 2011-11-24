@@ -4,5 +4,8 @@ TravelServer::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => :show
+  authenticate :user do
+      root :to => "user#show"
+    end
   resources :transportations
 end
