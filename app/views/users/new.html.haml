@@ -8,5 +8,7 @@
   = f.input :email, :label => false, :placeholder => "Your email"
   = f.input :password, :label => false, :placeholder => "Your password"
   = f.input :password_confirmation, :label => false, :placeholder => "Password confirmation"
+  = f.simple_fields_for :profile do |pf|
+    = pf.input :full_name, :label => false, :placeholder => "Your name please"
   = f.button :submit, "Signup"
 
