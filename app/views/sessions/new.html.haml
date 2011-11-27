@@ -1,0 +1,10 @@
+<h1>Log in</h1>
+
+= form_tag sessions_path, class: "simple_form" do 
+  .input.string.email.required
+    = text_field_tag :email, params[:email] , placeholder: "Your email"
+  .input.password.required
+    = password_field_tag :password, nil, class: "password required", placeholder: "Your password"
+  .actions
+    = submit_tag "Log in"
+

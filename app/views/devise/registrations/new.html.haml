@@ -1,8 +1,0 @@
-%h3 Join us today !
-= devise_error_messages!
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :defaults => {:label => false}) do |f|
-  = f.input :name, :placeholder => "Your Fullname", :label => false
-  = f.input :email, :placeholder => "Email Address", :label => false
-  = f.input :password, :placeholder => "Password", :label => false
-  = f.input :password_confirmation, :placeholder => "Confirm your Password", :label => false
-  = f.submit "Sign up"

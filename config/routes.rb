@@ -1,11 +1,10 @@
 TravelServer::Application.routes.draw do
 
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :users
+  resources :sessions
+  get "secret" => "home#secret", :as => "secret"
   root :to => "home#index"
-
-  devise_for :users
-  resources :users, :only => :show
-  authenticate :user do
-      root :to => "user#show"
-    end
-  resources :transportations
 end

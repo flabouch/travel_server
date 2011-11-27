@@ -1,0 +1,12 @@
+= simple_form_for @user do |f|
+  - if @user.errors.any? 
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - for message in @user.errors.full_messages 
+          %li= message
+  = f.input :email, :label => false, :placeholder => "Your email"
+  = f.input :password, :label => false, :placeholder => "Your password"
+  = f.input :password_confirmation, :label => false, :placeholder => "Password confirmation"
+  = f.button :submit, "Signup"
+

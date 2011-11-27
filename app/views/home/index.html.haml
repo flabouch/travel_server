@@ -1,5 +1,10 @@
-.signin.row
-  = render :file => 'devise/sessions/new'
-.signup.row
-  = render :file => 'devise/registrations/new'
+- if current_user
+  = link_to "Edit Profile", edit_user_path(current_user.id)
+  = link_to "Logout", :logout
+    
+- else
+  .signin.row
+    = render :file => 'sessions/new'
+  .signup.row
+    = render :file => 'users/new'
 
