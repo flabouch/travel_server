@@ -1,6 +1,12 @@
-%nav
-  %ul
-    %li Home
-    %li Profile
-    %li Message
-    %li My account
+- if current_user
+  %nav
+    %ul
+      %li= link_to "Home", root_path
+      %li= link_to "My Profile", dashboard_path
+      %li= link_to "My account", edit_user_path(current_user.id)
+      %li= link_to "Logout", :logout
+- else
+  .signin.row
+    = link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter)  | 
+    = link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) 
+    = render :file => 'sessions/new'

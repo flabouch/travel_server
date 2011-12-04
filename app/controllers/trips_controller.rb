@@ -1,5 +1,4 @@
 class TripsController < ApplicationController
-
   def index
     @trips = Trip.all
     @trip = Trip.new
@@ -11,12 +10,16 @@ class TripsController < ApplicationController
   end
 
   def create
+    @trips = Trip.all
     @trip = Trip.new(params[:trip])
-    if @trip.save
-      flash[:notice] = "Successfully created trip."
-      redirect_to trips_url
-    else
-      render :action => 'create'
+    respond_to do |format|
+      if @trip.save
+        flash[:notice] = "Successfully created trip."
+        format.html { redirect_to trips_url, :notice => "post created with non ajax"}
+        format.js
+      else
+        render :action => 'new'
+      end
     end
   end
 

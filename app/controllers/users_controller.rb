@@ -13,4 +13,9 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def dashboard
+    @user = current_user
+    
+  end
 end

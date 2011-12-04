@@ -1,10 +1,4 @@
-- if current_user
-  = link_to "Edit Profile", edit_user_path(current_user.id)
-  = link_to "Logout", :logout
-    
-- else
-  .signin.row
-    = render :file => 'sessions/new'
+- unless current_user
   .signup.row
     = render :file => 'users/new'
 

@@ -1,1 +1,8 @@
-%h1 welcome to your trip lists 
+#trips
+  = render @trips 
+
+%h3 Add a trip
+= simple_form_for @trip, remote: true do |f| 
+  = f.input :name
+  = f.button :submit
+

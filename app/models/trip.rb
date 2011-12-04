@@ -11,10 +11,10 @@
 #
 
 class Trip < ActiveRecord::Base
-  has_one :logo
-  accepts_nested_attributes_for :logo
-  #has_many :destinations, :dependent => :destroy
-  attr_accessible :name, :description, :logo_attributes
+  #has_one :logo
+  #accepts_nested_attributes_for :logo
+  has_many :destinations, :dependent => :destroy
+  attr_accessible :name, :description
 
 end
 

@@ -1,8 +1,6 @@
 %H1 create a trip
 
-= simple_form_for @trip do |f| 
+= simple_form_for @trip, remote: true do |f| 
   = f.input :name
-  = f.simple_fields_for :logo do |flogo|
-    = flogo.input :name
   = f.button :submit 
 

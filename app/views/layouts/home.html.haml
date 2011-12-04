@@ -5,9 +5,9 @@
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
-  %body.body-noise
-    -#%header
-      -#= render "layouts/header"
+  %body
+    %header.container
+      = render "layouts/header"
     - flash.each do |name, msg|
       - if msg.class == Array 
         - msg.each do |message| 
