@@ -1,8 +1,5 @@
-- unless @trips.empty?
-  = "bouton d'ajout d'un trip"
-  #trips
-    = render @trips
-- else
+#trips
+  = render :partial => "trips/trip", :collection => @trips
   = simple_form_for @trip, remote: true do |t|
     = t.input :name, label: false, placeholder: "Your trip name"
     = t.submit "Create your trip"

@@ -1,5 +1,6 @@
-.trip
-  %strong= trip.name
-  .actions
-    = link_to 'edit', edit_trip_path(trip)
-    = link_to 'delete', trip, method: :delete, remote: true
+= div_for trip do
+  .trip
+    %strong= trip.name
+    .actions
+      = link_to 'edit', edit_trip_path(trip)
+      = link_to 'delete', trip, method: :delete, remote: true

@@ -10,8 +10,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trips = Trip.all
-    @trip = Trip.new(params[:trip])
+    @trip = current_user.trips.build(params[:trip])
     respond_to do |format|
       if @trip.save
         flash[:notice] = "Successfully created trip."
@@ -29,6 +28,15 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])  
+  end
+
+  def destroy
+   @trip = Trip.find(params[:id]) 
+   @trip.destroy
+   respond_to do |format|
+     format.html { redirect_to dashboard_path}
+     format.js
+   end
   end
 
 end
