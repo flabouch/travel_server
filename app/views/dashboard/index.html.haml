@@ -1,5 +1,10 @@
 #trips
-  = render :partial => "trips/trip", :collection => @trips
-  = simple_form_for @trip, remote: true do |t|
-    = t.input :name, label: false, placeholder: "Your trip name"
-    = t.submit "Create your trip"
+  #create_trip
+    %h3 What is your next destination ?
+    = render :file => "trips/new"
+  #user_trips
+    %h3 Your trips
+    = render :partial => "trips/trip", :collection => @trips
+  #trip_details
+    %h3 display your trip destinations
+

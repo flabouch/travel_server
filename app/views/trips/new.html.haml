@@ -1,6 +1,3 @@
-%H1 create a trip
-
-= simple_form_for @trip, remote: true do |f| 
-  = f.input :name
-  = f.button :submit 
-
+= simple_form_for @trip, remote: true do |t|
+  = t.input :name, label: false, placeholder: "Your trip name"
+  = t.submit "Create your trip"
