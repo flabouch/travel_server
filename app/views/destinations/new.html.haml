@@ -1,0 +1,5 @@
+= simple_form_for [ @trip, @destination ] do |t|
+  = t.input :name, label: false, placeholder: "Your destination name"
+  = t.input :arrival, :as => :string, :input_html => { :class => 'datepicker' }
+  = t.input :departure, :as => :string, :input_html => { :class => 'datepicker' }
+  = t.submit "Create your destination"

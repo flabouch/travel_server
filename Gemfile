@@ -22,6 +22,9 @@ gem "database_cleaner", ">= 0.6.7", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 #gem "devise", ">= 1.4.7"
 
+group :development do
+  gem "log_buddy"
+end
 group :test do
   gem "factory_girl_rails", ">= 1.2.0"
   gem "capybara", ">= 1.1.1"

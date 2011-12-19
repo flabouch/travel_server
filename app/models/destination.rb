@@ -25,14 +25,14 @@ class Destination < ActiveRecord::Base
   validates       :name,      :presence  => true
   validates       :arrival,   :presence  => true   
   validates       :departure, :presence  => true   
+  validate :valid_arrival?
   # Is transportation mode mandatory ?
   #validates       :transportation_arrival,
     #:presence => { :message => 'there should be a transportation for arrival' }
   #validates       :transportation_departure,
     #:presence => { :message => 'there should be a transportation for departure' }
-  validate :valid_arrival?
 
-  delegate :arrival_transportation_mode, :to => :transportation
+  #delegate :arrival_transportation_mode, :to => :transportation
 
 
   private

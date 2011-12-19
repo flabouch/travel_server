@@ -6,7 +6,6 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    @trip.build_logo
   end
 
   def create

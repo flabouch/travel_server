@@ -5,6 +5,8 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require foundation
+//= require jquery-ui-timepicker-addon.js
 //= require_tree .

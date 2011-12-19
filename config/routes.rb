@@ -12,7 +12,9 @@ TravelServer::Application.routes.draw do
   resources :users do
     resource :profile
   end
-  resources :trips
+  resources :trips do
+    resources :destinations
+  end
   resources :sessions
   get "secret" => "home#secret", :as => "secret"
   root :to => "home#index"
