@@ -17,15 +17,12 @@
       = render "layouts/header"
     .container
       .row
-        .height.columns.centered
+        .eight.columns.centered
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
       .row
-        .height.columns
+        .twelve.columns
           = yield
-        .four.columns
-          %aside
-            = render "layouts/aside"
       .row
         = debug(params) if Rails.env.development?
     %footer.container

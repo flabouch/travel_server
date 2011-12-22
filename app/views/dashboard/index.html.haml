@@ -1,14 +1,14 @@
 #trips
   .row
-    #create_trip.four.columns
+    #create_trip.six.columns
       %h3 What is your next destination ?
       = render file: "trips/new"
-    #user_trips.four.columns
+    #user_trips.six.columns
       %h3 Your trips
       .trips
         = render partial: "trips/trip", collection: @trips
   .row
-    #trip_destinations.eight.columns
+    #trip_destinations.twelve.columns
       %h3 Your trip destinations
       =render file: "destinations/new"
       .destinations

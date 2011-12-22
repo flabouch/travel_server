@@ -1,5 +1,9 @@
-= simple_form_for [ @current_trip, @destination ] do |t|
-  = t.input :name, label: false, placeholder: "Your destination name"
-  = t.input :arrival, :as => :string, :input_html => { :class => 'datepicker' }
-  = t.input :departure, :as => :string, :input_html => { :class => 'datepicker' }
-  = t.submit "Create your destination"
+<a href="#" data-reveal-id="new_destination_modal" class="nice small radius blue button">Add a destination</a>
+
+#new_destination_modal.reveal-modal
+  <a class="close-reveal-modal">&#215;</a>
+  = simple_form_for [ @current_trip, @destination ], remote: true do |t|
+    = t.input :name, label: false, placeholder: "Your destination name"
+    = t.input :arrival, :as => :string, input_html: { class: 'datepicker' }
+    = t.input :departure, :as => :string, input_html: { class: 'datepicker' }
+    = t.submit "Add destination", class: "nice small radius blue button close-reveal-modal"
