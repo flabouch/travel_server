@@ -2,5 +2,5 @@
   .destination
     %strong= destination.name
     .actions
-      = link_to 'edit', edit_trip_destination_path(@trip, destination)
-      = link_to 'delete', trip_destination_path(@trip, destination), method: :delete, remote: true
+      = link_to 'edit', edit_trip_destination_path(@current_trip, destination), remote: true
+      = link_to 'delete', trip_destination_path(@current_trip, destination), method: :delete, remote: true

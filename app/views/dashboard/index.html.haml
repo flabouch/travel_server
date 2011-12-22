@@ -1,10 +1,15 @@
 #trips
-  #create_trip
-    %h3 What is your next destination ?
-    = render :file => "trips/new"
-  #user_trips
-    %h3 Your trips
-    = render :partial => "trips/trip", :collection => @trips
-  #trip_details
-    %h3 display your trip destinations
-
+  .row
+    #create_trip.four.columns
+      %h3 What is your next destination ?
+      = render file: "trips/new"
+    #user_trips.four.columns
+      %h3 Your trips
+      .trips
+        = render partial: "trips/trip", collection: @trips
+  .row
+    #trip_destinations.eight.columns
+      %h3 Your trip destinations
+      =render file: "destinations/new"
+      .destinations
+        = render partial: "destinations/destination", collection: @current_trip.destinations

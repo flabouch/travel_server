@@ -1,18 +1,22 @@
 class DestinationsController < ApplicationController
   def index
-    @trip = Trip.find(params[:trip_id])
-    @destinations = Destination.all
+    @current_trip = Trip.find(params[:trip_id])
+    @destinations = @current_trip.destinations
     @destination = Destination.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
-    @trip = Trip.find(params[:trip_id])
+    @current_trip = Trip.find(params[:trip_id])
     @destination = Destination.new
   end
 
   def create
-    @trip = Trip.find(params[:trip_id])
-    @destination = @trip.destinations.build(params[:destination])
+    @current_trip = Trip.find(params[:trip_id])
+    @destination = @current_trip.destinations.build(params[:destination])
     respond_to do |format|
       if @destination.save
         flash[:notice] = "Successfully created destination."

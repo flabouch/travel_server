@@ -1,5 +1,5 @@
 $('<%= escape_javascript(render :partial => @trip) %>')
-	.appendTo('#user_trips')
+	.appendTo('.trips')
 	.hide()
 	.fadeIn()
 

@@ -1,6 +1,6 @@
 = div_for trip do
   .trip
-    %strong= trip.name
+    %strong= link_to trip.name, trip_destinations_path(trip), remote: true
     .actions
       = link_to 'edit', edit_trip_path(trip)
       = link_to 'delete', trip, method: :delete, remote: true
