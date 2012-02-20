@@ -1,5 +1,5 @@
 # enter your gemset below
-rvm ruby-1.9.2@travel_server
+rvm ruby-1.9.3@travel_server
 
 # no need to edit below here
 alias rails="bundle exec rails"
